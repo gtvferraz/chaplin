@@ -27,7 +27,10 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    const url = 'http://localhost:8080/categorias';
+    const url = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://chaplin-react.herokuapp.com/categorias';
+
     fetch(url).then(async (respostaDoServer) => {
       const resposta = await respostaDoServer.json();
       setCategorias([
