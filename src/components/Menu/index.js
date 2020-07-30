@@ -1,19 +1,19 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/img/Logo.png';
-import {LogoImage, MenuWrapper} from './style.js';
-import Button from '../Button'
+import { LogoImage, MenuWrapper } from './style';
+import MenuButton from './components/MenuButton';
 
 function Menu() {
   return (
     <MenuWrapper className="Menu">
       <Link to="/">
-        <LogoImage src={Logo} alt="Chaplin logo"/>
+        <LogoImage src={Logo} alt="Chaplin logo" />
       </Link>
 
-      <Button as={Link} to="/cadastro/video">
+      <MenuButton as={Link} to="/cadastro/video">
         Novo vídeo
-      </Button>
+      </MenuButton>
     </MenuWrapper>
   );
 }
